@@ -1,4 +1,4 @@
-# Task Scheduling API
+mvn# Task Scheduling API
 
 A simple Spring Boot REST API for managing scheduled tasks using an in-memory repository.
 
@@ -18,7 +18,7 @@ A simple Spring Boot REST API for managing scheduled tasks using an in-memory re
 - Spring Web
 - Spring Validation
 - Lombok
-- Maven
+- Maven (wrapper included, no installation required)
 
 ## Project structure
 
@@ -96,7 +96,10 @@ curl "http://localhost:8080/tasks?status=PENDING&page=0&size=5"
 ### Required software
 
 - Java 17 JDK
-- Maven (optional when using the included Maven wrapper)
+
+### Optional software
+
+- Maven (not required, as the project includes the Maven wrapper which downloads Maven automatically)
 
 ### Install Java 17
 
@@ -129,7 +132,9 @@ The output should include `17`.
 
 ### Install Maven (optional)
 
-This project includes the Maven wrapper, so Maven is not strictly required.
+This project includes the Maven wrapper, so Maven is not strictly required. The wrapper will download Maven automatically if needed.
+
+If you prefer to install Maven globally:
 
 For Windows:
 
@@ -158,7 +163,7 @@ mvn -version
 
 ## Build and run
 
-The project includes `mvnw` and `mvnw.cmd` so you can build and run without installing Maven globally.
+The project includes `mvnw` (for macOS/Linux) and `mvnw.cmd` (for Windows) Maven wrapper scripts, so you can build and run without installing Maven globally. The wrapper will automatically download Maven if it's not already available.
 
 ### Build
 
@@ -190,6 +195,16 @@ For macOS/Linux:
 
 The application starts on `http://localhost:8080`.
 
+### Alternative: Using installed Maven
+
+If you have Maven installed globally, you can use `mvn` instead of `mvnw` or `mvnw.cmd`:
+
+```bash
+mvn clean package
+mvn spring-boot:run
+mvn test
+```
+
 ## Tests
 
 For Windows:
@@ -202,6 +217,14 @@ For macOS/Linux:
 
 ```bash
 ./mvnw test
+```
+
+### Alternative: Using installed Maven
+
+If you have Maven installed globally:
+
+```bash
+mvn test
 ```
 
 ## Notes
